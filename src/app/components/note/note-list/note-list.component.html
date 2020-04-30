@@ -1,0 +1,21 @@
+<div class="container myContainer">
+
+    <div class="card-header">
+        <h3>List of Notes</h3>
+    </div>
+
+    <div *ngFor="let note of notes" class="card myCard">
+
+        <span style="display: none">{{note.noteId}}</span>
+        <span class="myCard-heading">{{note.noteTitle}}</span>
+        <span class="myCard-note">{{note.noteContent}}</span>
+        
+        <div class="myCard-buttons">
+          <button  class="edit" (click)="editNote(note.noteId)"><i class="fa fa-edit" ></i></button>
+          <button class="archive" (click)="archiveNote(note.noteId)"><i class="fa fa-archive"></i></button>
+          <button class="delete" (click)="deleteNote(note.noteId)"><i class="fa fa-remove"></i></button>
+        </div>
+      
+    </div>
+
+</div>
